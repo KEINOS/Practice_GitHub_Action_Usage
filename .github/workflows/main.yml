@@ -10,13 +10,11 @@ jobs:
       uses: KEINOS/Practice_GitHub_Action@v0.0.4
       with:
         # Workflow の引数として渡す値
-        who-to-greet: 'Mona the Octocat'
+        who-to-greet: 'Mona the Octocat (From who-to-gree @ client workflow/main.yml)'
       env:
-        MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
-        MY_SECRET_VALUEX: ${{ secrets.MY_SECRET_VALUE }}
+        MY_SECRET_VALUE: ${{ secrets.MY_SECRET_VALUE }}
     # Use the output from the ID `hello` step
     - name: Get the output time
       env:
-        MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
-        MY_SECRET_VALUEY: ${{ secrets.MY_SECRET_VALUE }}
+        MY_SECRET_VALUE: ${{ secrets.MY_SECRET_VALUE }}
       run: echo "Halloo! The time was ${{ steps.hello.outputs.time }}" && echo "ENV info in output time step are:" && env
