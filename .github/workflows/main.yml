@@ -11,9 +11,11 @@ jobs:
       with:
         who-to-greet: 'Mona the Octocat'
       env:
-        super_secret: ${{ secrets.SuperSecret }}
+        MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
+        MY_SECRET_VALUEX: ${{ secrets.MY_SECRET_VALUE }}
     # Use the output from the `hello` step
     - name: Get the output time
       env:
-        super_secrets: ${{ secrets.SuperSecret }}
-      run: echo "The time was ${{ steps.hello.outputs.time }}" && echo "ENV info are:" && env
+        MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
+        MY_SECRET_VALUEY: ${{ secrets.MY_SECRET_VALUE }}
+      run: echo "Halloo! The time was ${{ steps.hello.outputs.time }}" && echo "ENV info are:" && env
