@@ -7,15 +7,16 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: KEINOS/Practice_GitHub_Action@v0.0.3
+      uses: KEINOS/Practice_GitHub_Action@v0.0.4
       with:
+        # Workflow の引数として渡す値
         who-to-greet: 'Mona the Octocat'
       env:
         MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
         MY_SECRET_VALUEX: ${{ secrets.MY_SECRET_VALUE }}
-    # Use the output from the `hello` step
+    # Use the output from the ID `hello` step
     - name: Get the output time
       env:
         MY_SECRET_VALUE: ${{ secrets.SuperSecret }}
         MY_SECRET_VALUEY: ${{ secrets.MY_SECRET_VALUE }}
-      run: echo "Halloo! The time was ${{ steps.hello.outputs.time }}" && echo "ENV info are:" && env
+      run: echo "Halloo! The time was ${{ steps.hello.outputs.time }}" && echo "ENV info in output time step are:" && env
