@@ -7,13 +7,13 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: KEINOS/Practice_GitHub_Action@v0.0.1
+      uses: KEINOS/Practice_GitHub_Action@v0.0.2
       with:
         who-to-greet: 'Mona the Octocat'
-      env: # Or as an environment variable
+      env:
         super_secret: ${{ secrets.SuperSecret }}
     # Use the output from the `hello` step
     - name: Get the output time
-      env: # Or as an environment variable
+      env:
         super_secrets: ${{ secrets.SuperSecret }}
       run: echo "The time was ${{ steps.hello.outputs.time }}" && echo "ENV info are:" && env
