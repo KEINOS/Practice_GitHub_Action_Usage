@@ -5,6 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+    - name: Check outside Docker (Preparation)
+      run: |
+        echo 'main.yml:'
+        ls -la && pwd
+        tree -d /
     - name: Hello world action step
       id: hello
       uses: KEINOS/Practice_GitHub_Action@v0.0.7
@@ -13,10 +18,6 @@ jobs:
         who-to-greet: 'Mona the Octocat (From who-to-gree @ client workflow/main.yml)'
       env:
         MY_SECRET_VALUE: ${{ secrets.MY_SECRET_VALUE }}
-      run: |
-        echo 'main.yml:'
-        ls -la && pwd
-        tree -d /
     # Use the output from the ID `hello` step
     - name: Get the output time
       env:
