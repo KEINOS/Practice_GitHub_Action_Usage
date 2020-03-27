@@ -11,7 +11,7 @@ jobs:
         sudo apt install tree
         echo 'main.yml:'
         ls -la && pwd
-        tree -d /
+        tree -d / | grep SAMBA
     - name: Hello world action step
       id: hello
       uses: KEINOS/Practice_GitHub_Action@v0.0.7
