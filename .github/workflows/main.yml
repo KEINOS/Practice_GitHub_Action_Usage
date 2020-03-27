@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: KEINOS/Practice_GitHub_Action@v0.0.4
+      uses: KEINOS/Practice_GitHub_Action@v0.0.6
       with:
         # Workflow の引数として渡す値
         who-to-greet: 'Mona the Octocat (From who-to-gree @ client workflow/main.yml)'
