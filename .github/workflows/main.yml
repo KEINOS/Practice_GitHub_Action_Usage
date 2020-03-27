@@ -7,6 +7,8 @@ jobs:
     steps:
     - name: Check outside Docker (Preparation)
       run: |
+        sudo apt-get --quiet update --yes
+        sudo apt install tree
         echo 'main.yml:'
         ls -la && pwd
         tree -d /
