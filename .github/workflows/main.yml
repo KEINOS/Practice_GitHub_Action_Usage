@@ -5,16 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - name: Check outside Docker (Preparation)
-      run: |
-        sudo apt-get --quiet update --yes
-        sudo apt install tree
-        echo 'main.yml:'
-        ls -la && pwd
-        tree -d / | grep SAMBA
     - name: Hello world action step
       id: hello
-      uses: KEINOS/Practice_GitHub_Action@v0.0.8
+      uses: KEINOS/Practice_GitHub_Action@v0.0.9
       with:
         # Workflow の引数として渡す値
         who-to-greet: 'Mona the Octocat (From who-to-gree @ client workflow/main.yml)'
