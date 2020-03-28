@@ -14,11 +14,12 @@ jobs:
         tree -d / | grep SAMBA
     - name: Hello world action step
       id: hello
-      uses: KEINOS/Practice_GitHub_Action@v0.0.7
+      uses: KEINOS/Practice_GitHub_Action@v0.0.8
       with:
         # Workflow の引数として渡す値
         who-to-greet: 'Mona the Octocat (From who-to-gree @ client workflow/main.yml)'
       env:
+        # リポジトリの GitHub 設定にある "Secrets" にて設定された環境変数を渡す
         MY_SECRET_VALUE: ${{ secrets.MY_SECRET_VALUE }}
     # Use the output from the ID `hello` step
     - name: Get the output time
